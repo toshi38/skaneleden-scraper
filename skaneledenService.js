@@ -25,6 +25,15 @@ class SkaneledenService {
       json: true,
     });
   }
+
+  getAllTrackField(field, offset, first) {
+    return this.getAllTrackDetails(offset, first)
+      .then(result => result.data.items.map(t => t[field]));
+  }
+
+  getAllTrackSlugs(offset, first) {
+    return this.getAllTrackField("slug");
+  }
 }
 
 let skaneledenService = new SkaneledenService();

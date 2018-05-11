@@ -8,6 +8,7 @@ const TRAIL_NAME = 'skaneleden';
 
 const TRACK_PATH = "tracks";
 const TRACK_SEGMENT_PATH = "track-segments";
+const TRACK_MAPS_PATH = `${TRACK_SEGMENT_PATH}/map`;
 
 class SkaneledenService {
   constructor() {
@@ -56,6 +57,19 @@ class SkaneledenService {
 
   getAllTrackSegmentSlugs(trackSlug, offset, first) {
     return this.getAllTrackSegmentField(trackSlug, "slug");
+  }
+
+  getAllTrackSegmentGeo(segmentSlug, offset, first) {
+    return rp({
+      url: `${ENDPOINT}/${TRACK_MAPS_PATH}`,
+      qs: {
+        token: API_TOKEN,
+        offset,
+        limit: first,
+        ids: segmentSlug,
+      },
+      json: true,
+    });
   }
 }
 

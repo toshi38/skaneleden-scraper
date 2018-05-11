@@ -25,6 +25,8 @@
     "eslint": "^4.19.1"
   },
   "dependencies": {
-    "auto-bind": "^1.2.0"
+    "auto-bind": "^1.2.0",
+    "request": "^2.85.0",
+    "request-promise": "^4.2.2"
   }
 }

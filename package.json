@@ -21,11 +21,13 @@
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^8.2.3",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-preset-env": "^1.7.0",
     "eslint": "^4.19.1"
   },
   "dependencies": {
     "auto-bind": "^1.2.0",
+    "bluebird": "^3.5.1",
     "request": "^2.85.0",
     "request-promise": "^4.2.2"
   }

@@ -1,0 +1,21 @@
+{
+  "parser": "babel-eslint",
+  "rules": {
+    "eqeqeq": "error",
+    "no-var": "error",
+    "comma-dangle": ["error", "always"],
+    "semi": ["error", "always"],
+    "no-console": "off",
+    "no-unused-vars": ["error", {"args": "none"}],
+    "eol-last": "error",
+    "no-tabs": "error",
+    "indent": ["error", 2]
+  },
+  "env": {
+    "node": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended"
+  ]
+}

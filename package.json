@@ -1,0 +1,27 @@
+{
+  "name": "skaneleden-scraper",
+  "version": "1.0.0",
+  "description": "Scrape all of the tracks and segments from the Skaneleden api",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint *.js",
+    "test": "npm run lint",
+    "start": "babel-node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/toshi38/skaneleden-scraper.git"
+  },
+  "author": "Stephen Lau",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/toshi38/skaneleden-scraper/issues"
+  },
+  "homepage": "https://github.com/toshi38/skaneleden-scraper#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-eslint": "^8.2.3",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1"
+  }
+}

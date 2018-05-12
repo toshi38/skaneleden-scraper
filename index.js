@@ -12,3 +12,9 @@
 // const DISTANCE_INFILE = "data-full.json";
 // const DISTANCE_OUTFILE = "data_distance.json";
 // addDistancesToRawData(DISTANCE_INFILE, DISTANCE_OUTFILE);
+
+//Filter data with distances:
+import filterDataFile from './filter';
+const FILTER_INFILE = "data_distance.json";
+const FILTER_OUTFILE = "data_filtered.json";
+filterDataFile(FILTER_INFILE, FILTER_OUTFILE);

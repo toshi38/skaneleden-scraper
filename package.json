@@ -28,6 +28,8 @@
   "dependencies": {
     "auto-bind": "^1.2.0",
     "bluebird": "^3.5.1",
+    "graphql-request": "^1.6.0",
+    "graphql-tag": "^2.9.2",
     "request": "^2.85.0",
     "request-promise": "^4.2.2"
   }

@@ -1,5 +1,6 @@
 //Calculate the distances for segments
 import calcDistance from 'gps-distance';
+import fs from 'fs';
 
 //calculate the distance for one section:
 export function calculateSectionDistance(section) {
@@ -44,5 +45,24 @@ export function calculateSectionDistance(section) {
   return calcDistance(temp);
 }
 
-  return calcDistance(temp).toFixed(2);
+//Augment an existing data scrape with distances:
+export function augmentDataWithDistance(data) {
+  let result = data.map(track => track.trackSegmentsWithGeo.map(trackSegment => {
+    console.log(`Augmenting: ${track.name} - ${trackSegment.name} with distance`);
+    return {
+      ...trackSegment,
+      lengthKm: calculateSectionDistance(trackSegment),
+    };
+  }));
+  return result;
+}
+
+
+export default function addDistancesToRawData(inFile, outFile) {
+  let data = require(`./${inFile}`);
+
+  let augmentedData = augmentDataWithDistance(data);
+
+  let jsonString = JSON.stringify(augmentedData, null, 2);
+  fs.writeFileSync(outFile, jsonString);
 }

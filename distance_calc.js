@@ -47,12 +47,15 @@ export function calculateSectionDistance(section) {
 
 //Augment an existing data scrape with distances:
 export function augmentDataWithDistance(data) {
-  let result = data.map(track => track.trackSegmentsWithGeo.map(trackSegment => {
-    console.log(`Augmenting: ${track.name} - ${trackSegment.name} with distance`);
-    return {
-      ...trackSegment,
-      lengthKm: calculateSectionDistance(trackSegment),
-    };
+  let result = data.map(track => ({
+    ...track,
+    trackSegmentsWithGeo: track.trackSegmentsWithGeo.map(trackSegment => {
+      console.log(`Augmenting: ${track.name} - ${trackSegment.name} with distance`);
+      return {
+        ...trackSegment,
+        lengthKm: calculateSectionDistance(trackSegment),
+      };
+    }),
   }));
   return result;
 }

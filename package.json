@@ -28,6 +28,7 @@
   "dependencies": {
     "auto-bind": "^1.2.0",
     "bluebird": "^3.5.1",
+    "gps-distance": "0.0.4",
     "request": "^2.85.0",
     "request-promise": "^4.2.2"
   }
